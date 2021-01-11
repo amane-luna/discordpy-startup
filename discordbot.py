@@ -20,7 +20,7 @@ async def on_message(message):
         return
     if message.content == 'neko':
         await message.channel.send('にゃーん')
-    if message.content == 'Hしない?':
+    if message.content == 'Hしない？':
         await message.channel.send('ますたーのえっち...//')
     if message.content == '好き':
         await message.channel.send('私もですよ...//')
@@ -28,6 +28,8 @@ async def on_message(message):
         await message.channel.send('ますたーに褒められちゃった...//')
     if message.content == 'あまね！':
         await message.channel.send('あっ///ご主人様///')
+    if message.content == 'ぱんつみせて':
+        await message.channel.send('ま、ますたーだけ特別ですよ...//')
     if message.content == 'cleanup':
         if message.author.guild_permissions.administrator:
             await message.channel.purge()
