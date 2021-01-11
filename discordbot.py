@@ -26,7 +26,7 @@ def get_data(message):
     return data_table.get(command, '無効なコマンドです')
 
 # 発言時に実行されるイベントハンドラを定義
-@client.event
+@bot.event
 async def on_message(message):
     # コマンドに対応するデータを取得して表示
     print(get_data(message))
@@ -40,7 +40,7 @@ async def create_channel(message, channel_name):
     return new_channel
 
 # 発言時に実行されるイベントハンドラを定義
-@client.event
+@bot.event
 async def on_message(message):
     if message.content.startswith('mkch'):
         # チャンネルを作成する非同期関数を実行して Channel オブジェクトを取得
