@@ -31,7 +31,7 @@ async def on_message(message):
     if message.content == 'cleanup':
         if message.author.guild_permissions.administrator:
             await message.channel.purge()
-            await message.channel.send('塵一つ残らないね！')
+            await message.channel.send('ますたー！お掃除完了！')
         else:
             await message.channel.send('何様のつもり？')
 
