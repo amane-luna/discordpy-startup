@@ -26,7 +26,7 @@ async def on_message(message):
         await message.channel.send('ますたーのえっち...//')
     if message.content == '好き':
         await message.channel.send('私もですよ...//')
-    if message.content == '/cleanup':
+    if message.content == 'cleanup':
         if message.author.guild_permissions.administrator:
             await message.channel.purge()
             await message.channel.send('塵一つ残らないね！')
