@@ -18,10 +18,8 @@ async def on_message(message):
   # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
         return
-    # 「/neko」と発言したら「にゃーん」が返る処理
     if message.content == 'neko':
         await message.channel.send('にゃーん')
-    #「Hしない?」と発言したら「ますたーのえっち...//」が返る処理
     if message.content == 'Hしない?':
         await message.channel.send('ますたーのえっち...//')
     if message.content == '好き':
