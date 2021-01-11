@@ -25,30 +25,12 @@ def get_data(message):
     }
     return data_table.get(command, '無効なコマンドです')
 
-# 発言時に実行されるイベントハンドラを定義
-@bot.event
-async def on_message(message):
-    # コマンドに対応するデータを取得して表示
-    print(get_data(message))
-
-
 # 発言したチャンネルのカテゴリ内にチャンネルを作成する非同期関数
 async def create_channel(message, channel_name):
     category_id = message.channel.category_id
     category = message.guild.get_channel(category_id)
     new_channel = await category.create_text_channel(name=channel_name)
     return new_channel
-
-# 発言時に実行されるイベントハンドラを定義
-@bot.event
-async def on_message(message):
-    if message.content.startswith('mkch'):
-        # チャンネルを作成する非同期関数を実行して Channel オブジェクトを取得
-        new_channel = await create_channel(message, channel_name='new')
-
-        # チャンネルのリンクと作成メッセージを送信
-        text = f'{new_channel.mention} を作成しました'
-        await message.channel.send(text)
 
 
 @bot.event
@@ -70,6 +52,15 @@ async def on_message(message):
             await message.channel.send('今までの思い出が消えても...私の愛は変わりません...')
         else:
             await message.channel.send('何様のつもり？')
+    if message.content.startswith('mkch'):
+        # チャンネルを作成する非同期関数を実行して Channel オブジェクトを取得
+        new_channel = await create_channel(message, channel_name='new')
+
+        # チャンネルのリンクと作成メッセージを送信
+        text = f'{new_channel.mention} を作成しました'
+        await message.channel.send(text)
+   # コマンドに対応するデータを取得して表示
+        print(get_data(message))
 
 
 CHANNEL_ID = 798033196578242630 # 任意のチャンネルID(int)
