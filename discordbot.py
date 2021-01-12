@@ -56,15 +56,14 @@ async def ping(ctx):
     await ctx.send('pong')
 
 # say command
-dev_id = ["683616246079815690", "495581611728044032"] # [0]:天音月#8693, [1]:Lesch#4558
 @bot.command()
 async def say(ctx, *, text):
-    if ctx.message.author.id in dev_id:
+    if ctx.message.author.id == "683616246079815690"
         await ctx.message.delete()
 
         await ctx.send(f"{text}")
     else:
-        err_msg = await ctx.send("あなたにこのコマンドは使えないの。\n何様のつもり？")
+        await ctx.send("あなたにこのコマンドは使えないの。\n何様のつもり？")
 
 
 bot.run(token)
